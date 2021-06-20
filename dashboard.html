@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<link rel="stylesheet" href="./styles/style.css">
+
+		<title>Dashboard</title>
+	</head>
+	<body>
+		<nav>
+			<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="202" height="52" viewBox="0 0 202 52">
+  <g id="Group_41" data-name="Group 41" transform="translate(-139 -19)">
+    <rect id="Rectangle_57" data-name="Rectangle 57" width="52" height="45" rx="7" transform="translate(139 24)" fill="#ffca3e"/>
+    <text id="Karunakar_" data-name="Karunakar " transform="translate(273 40)" fill="#ffca3e" font-size="23" font-family="Georgia-Bold, Georgia" font-weight="700"><tspan x="-67.81" y="0">Karunakar </tspan></text>
+    <text id="Patel" transform="translate(235 66)" fill="#ffca3e" font-size="23" font-family="Georgia-Bold, Georgia" font-weight="700"><tspan x="-30.019" y="0">Patel</tspan></text>
+    <path id="code" d="M13.4,24.649,10.462,23.8a.578.578,0,0,1-.395-.717L16.635.454a.578.578,0,0,1,.717-.395l2.935.852a.578.578,0,0,1,.395.717L14.114,24.254A.577.577,0,0,1,13.4,24.649Zm-5.486-5.4L10,17.017a.577.577,0,0,0-.038-.828l-4.36-3.835,4.36-3.835A.573.573,0,0,0,10,7.691L7.911,5.459a.578.578,0,0,0-.818-.024l-6.934,6.5a.574.574,0,0,0,0,.842l6.934,6.5A.574.574,0,0,0,7.911,19.25Zm15.745.029,6.934-6.5a.574.574,0,0,0,0-.842L23.656,5.43a.583.583,0,0,0-.818.024L20.745,7.686a.577.577,0,0,0,.038.828l4.36,3.84-4.36,3.835a.573.573,0,0,0-.038.828l2.093,2.233A.578.578,0,0,0,23.656,19.279Z" transform="translate(149.709 34.297)" fill="#020c53"/>
+  </svg>
+		</nav>
+	<h2 style="margin: 18px 0px 10px 0px">Top Trending Javascripts Github Repositories</h2>
+	<div style="text-align: center;">
+			<button style="all: unset; border: 1px solid lightgrey; border-radius: 5px; background-color: lightgrey; margin: 20px 0px; "> 
+				<a href="/logout" style="padding: 10px 15px; text-decoration: none; font-size: 23px;background-color: #ffad26; color: white; border-radius: 5px; ">Logout</a>
+			</button>
+<br />
+		<div class="no"></div>
+			<button class="btn" style="all: unset; border: 1px solid lightgrey; border-radius: 5px; background-color: lightgrey; margin: 20px 0px; cursor: pointer"> 
+				<span style="padding: 10px 15px; text-decoration: none; font-size: 23px;background-color: #ffad26; color: white; border-radius: 5px; ">Load Data</span>
+			</button>
+	</div>
+<script>
+
+	const url =
+				"https://gtrend.yapie.me/repositories?language=javascript&since=";
+			const peopleList = document.querySelector(".no");
+			const btn = document.querySelector(".btn");
+			function generateHtml(item) {
+				console.log(item);
+				const { name, author, avatar, description, url, language, stars, forks } = item;
+				const section = document.createElement("card");
+				peopleList.appendChild(section);
+				const innerData = `<div class="in-one">
+   <img src=${avatar} alt=${name}>
+  </div>
+  <div class="in-two">
+   <h1>${author.toUpperCase()}</h1>
+   <p>${description}</p>
+   <div class="tags">
+    <span>Name: ${name}</span>
+    <span>Language: ${language}</span>
+    <span>Stars: ${stars}</span>
+    <span>Forks: ${forks}</span>
+   </div>
+  </div>
+  <div class="in-three">
+   <button>
+					<a href="${url}">Repo</a>
+				</button>
+  </div>`;
+				section.innerHTML = innerData;
+			}
+
+			fetch(url)
+				.then((res) => res.json())
+				.then((data) =>
+					data.map((item) => {
+						btn.addEventListener("click", (e) => {
+							generateHtml(item);
+							e.target.remove();
+						});
+					})
+				);
+		</script>
+
+
+
+		<style>
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+body {
+	background-color: #f9f9f9;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	position: relative;
+}
+
+nav {
+	width: 100%;
+	height: 89px;
+	display: block;
+	background-color: #020c53;
+	color: white;
+	text-align: center;
+}
+.icon {
+	margin-top: 15px;
+}
+.container {
+	width: 90%;
+	padding: 10px;
+	height: 524px;
+	margin: auto;
+	margin-top: 5%;
+	display: flex;
+	flex-grow: 1;
+	background-color: #ffffff;
+	border-radius: 18px;
+	position: relative;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.one {
+	/* border: 1px solid black; */
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.one h1 {
+	text-align: center;
+	color: #020c53;
+	font-size: 29px;
+	line-height: 55px;
+	margin-top: 25px;
+}
+
+.one button {
+	all: unset;
+	background-color: #ffad26 !important;
+	width: 240px;
+	height: 68px;
+	border-radius: 8px;
+	margin: auto;
+	text-align: center;
+	box-shadow: none;
+}
+
+.one button a {
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+	background-color: none;
+}
+
+.one p {
+	color: #000a4c;
+	font-size: 16px;
+
+	text-align: center;
+	margin: auto;
+	font-weight: bold;
+	margin: auto;
+}
+
+.two {
+	/* border: 1px solid green; */
+	display: flex;
+	flex-grow: 1;
+	width: 50%;
+	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+}
+
+.logo {
+	margin: auto;
+}
+
+.line {
+	position: absolute;
+	right: 50%;
+	margin-top: 15px;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 10px;
+}
+
+/*  Cards  */
+card {
+	/* border: 1px solid salmon; */
+	border-radius: 5px;
+	padding: 10px;
+	min-width: 954px;
+	min-height: 232px;	
+	width: 85% ;
+	height: 100%;
+	margin: auto;
+	margin-top: 50px;
+	background-color: #ffffff;
+	display: flex;
+	flex-wrap: wrap;
+	
+	position: relative;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.in-one {
+	border: 1px solid lightgrey;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	float: left;
+	clear: both;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	margin-top: 10px;
+}
+
+.in-two {
+	border: 1px dashed lightgrey;
+	height: auto;
+	width: 90%;
+	flex-basis: 80%;
+	margin-left: 20px;
+	padding-top: 10px;
+}
+
+.in-two h1 {
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px;
+	margin: 3px;
+}
+.in-two p {
+	font-size: 18px;
+	padding: 10px;
+	margin: -3px 3px 3px 3px;
+	line-height: 28px;
+}
+
+.tags {
+	display: flex;
+	/* border: 1px solid black; */
+	margin-top: 5px;
+	width: 95%;
+}
+.tags span {
+	margin: auto;
+	background-color: #9d9d9d;
+	padding: 8px 25px;
+	border-radius: 5px;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 10px 5px 3px 10px;
+}
+
+.in-three {
+	display: block;
+	position: absolute;
+	bottom: 5%;
+	margin: auto;
+}
+
+.in-three button {
+	all: unset;
+	background-color: #ffad26 !important;
+	width: 157px;
+	height: 40px;
+	border-radius: 8px;
+	margin: auto;
+	text-align: center;
+	box-shadow: none;
+}
+
+.in-three button a {
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+	background-color: none;
+}
+
+@media screen and (max-width: 992px) {
+	.container {
+		width: 100%;
+		height: auto;
+		flex-direction: column-reverse;
+		flex-grow: 1;
+	}
+	.one,
+	.two {
+		width: 100%;
+		display: block;
+		text-align: center;
+		margin: 5px;
+		/* border: 1px solid red; */
+	}
+	.one button {
+		width: 240px;
+		height: 55px;
+		margin: 10px 0px 0px 10px;
+	}
+	.one p {
+		margin-top: 20px;
+	}
+
+	.line {
+		display: none;
+	}
+
+	card {
+		min-width: 370px;
+		min-height: auto;
+		width: 82%;
+		height: auto;
+		margin: auto;
+		flex-wrap: wrap;
+		flex-direction: column;
+		padding: 0px;
+		margin-top: 18px;
+	}
+	.in-one {
+		margin: auto;
+		margin-top: 20px;
+	}
+	.in-two {
+		padding: 0px;
+		border: none;
+		margin: 0px;
+	}
+	.tags {
+		width: 95%;
+		margin: auto;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		text-align: center;
+		/* border: 1px solid red; */
+	}
+	.tags span {
+		margin: 10px 5px;
+	}
+	.in-three {
+		position: relative;
+		margin-bottom: 20px;
+		margin-top: 10px;
+	}
+}
+
+		</style>
+	</body>
+</html>

@@ -1,0 +1,269 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+body {
+	background-color: #f9f9f9;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	position: relative;
+}
+
+nav {
+	width: 100%;
+	height: 89px;
+	display: block;
+	background-color: #020c53;
+	color: white;
+	text-align: center;
+}
+.icon {
+	margin-top: 15px;
+}
+.container {
+	width: 90%;
+	padding: 10px;
+	height: 524px;
+	margin: auto;
+	margin-top: 5%;
+	display: flex;
+	flex-grow: 1;
+	background-color: #ffffff;
+	border-radius: 18px;
+	position: relative;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.one {
+	/* border: 1px solid black; */
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.one h1 {
+	text-align: center;
+	color: #020c53;
+	font-size: 29px;
+	line-height: 55px;
+	margin-top: 25px;
+}
+
+.one button {
+	all: unset;
+	background-color: #ffad26 !important;
+	width: 240px;
+	height: 68px;
+	border-radius: 8px;
+	margin: auto;
+	text-align: center;
+	box-shadow: none;
+}
+
+.one button a {
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+	background-color: none;
+}
+
+.one p {
+	color: #000a4c;
+	font-size: 16px;
+
+	text-align: center;
+	margin: auto;
+	font-weight: bold;
+	margin: auto;
+}
+
+.two {
+	/* border: 1px solid green; */
+	display: flex;
+	flex-grow: 1;
+	width: 50%;
+	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+}
+
+.logo {
+	margin: auto;
+}
+
+.line {
+	position: absolute;
+	right: 50%;
+	margin-top: 15px;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 10px;
+}
+
+/*  Cards  */
+card {
+	/* border: 1px solid salmon; */
+	border-radius: 5px;
+	padding: 10px;
+	min-width: 954px;
+	min-height: 232px;
+	width: 85%;
+	height: 100%;
+	margin: auto;
+	margin-top: 50px;
+	background-color: #ffffff;
+	display: flex;
+	flex-wrap: wrap;
+
+	position: relative;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.in-one {
+	border: 1px solid lightgrey;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	float: left;
+	clear: both;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	margin-top: 10px;
+}
+
+.in-two {
+	border: 1px dashed lightgrey;
+	height: auto;
+	width: 90%;
+	flex-basis: 80%;
+	margin-left: 20px;
+	padding-top: 10px;
+}
+
+.in-two h1 {
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px;
+	margin: 3px;
+}
+.in-two p {
+	font-size: 18px;
+	padding: 10px;
+	margin: -3px 3px 3px 3px;
+	line-height: 28px;
+}
+
+.tags {
+	display: flex;
+	/* border: 1px solid black; */
+	margin-top: 5px;
+	width: 95%;
+}
+.tags span {
+	margin: auto;
+	background-color: #9d9d9d;
+	padding: 8px 25px;
+	border-radius: 5px;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 10px 5px 3px 10px;
+}
+
+.in-three {
+	display: block;
+	position: absolute;
+	bottom: 5%;
+	margin: auto;
+}
+
+.in-three button {
+	all: unset;
+	background-color: #ffad26 !important;
+	width: 157px;
+	height: 40px;
+	border-radius: 8px;
+	margin: auto;
+	text-align: center;
+	box-shadow: none;
+}
+
+.in-three button a {
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+	background-color: none;
+}
+
+@media screen and (max-width: 992px) {
+	.container {
+		width: 100%;
+		height: auto;
+		flex-direction: column-reverse;
+		flex-grow: 1;
+	}
+	.one,
+	.two {
+		width: 100%;
+		display: block;
+		text-align: center;
+		margin: 5px;
+		/* border: 1px solid red; */
+	}
+	.one button {
+		width: 240px;
+		height: 55px;
+		margin: 10px 0px 0px 10px;
+	}
+	.one p {
+		margin-top: 20px;
+	}
+
+	.line {
+		display: none;
+	}
+
+	card {
+		min-width: 370px;
+		min-height: auto;
+		width: 82%;
+		height: auto;
+		margin: auto;
+		flex-wrap: wrap;
+		flex-direction: column;
+		padding: 0px;
+		margin-top: 18px;
+	}
+	.in-one {
+		margin: auto;
+		margin-top: 20px;
+	}
+	.in-two {
+		padding: 0px;
+		border: none;
+		margin: 0px;
+	}
+	.tags {
+		width: 95%;
+		margin: auto;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		text-align: center;
+		/* border: 1px solid red; */
+	}
+	.tags span {
+		margin: 10px 5px;
+	}
+	.in-three {
+		position: relative;
+		margin-bottom: 20px;
+		margin-top: 10px;
+	}
+}

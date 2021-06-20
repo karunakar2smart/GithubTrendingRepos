@@ -1,0 +1,29 @@
+{
+	"editor.fontSize": 18,
+	"editor.tabSize": 1,
+	"editor.cursorStyle": "line-thin",
+	"editor.wordWrap": "on",
+	"editor.codeActionsOnSave": [],
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.minimap.maxColumn": 80,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"css.validate": false,
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"tailwindCSS.includeLanguages": {
+		"plaintext": "html",
+		"javascript": "javascript-react"
+	},
+	"tailwindCSS.emmetCompletions": true,
+	"tailwindCSS.lint.cssConflict": "ignore",
+	"tailwindCSS.colorDecorators": "true",
+	"git.ignoreLimitWarning": true
+}
